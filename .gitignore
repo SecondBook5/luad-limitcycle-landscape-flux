@@ -1,0 +1,9 @@
+data/raw/
+data/interim/
+outputs/
+.ipynb_checkpoints/
+__pycache__/
+*.h5
+*.h5ad
+*.rds
+*.gz

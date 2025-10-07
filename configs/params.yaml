@@ -1,0 +1,13 @@
+# central knobs used by notebooks
+paths:
+  anndata: data/interim/mm_timecourse.h5ad
+  figures: outputs/figures
+  tables:  outputs/tables
+markers:
+  s_file:  configs/markers/S_mouse.txt
+  g2m_file: configs/markers/G2M_mouse.txt
+model:
+  bins: 60
+  ridge_lambda: 0.0
+  harmonics_K: 1
+  seed: 42
