@@ -7,3 +7,4 @@ __pycache__/
 *.h5ad
 *.rds
 *.gz
+/.venv_limitcycle-mm/
