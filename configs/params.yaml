@@ -1,13 +1,53 @@
-# central knobs used by notebooks
+# Project configuration for luad-limitcycle-landscape-flux
+
 paths:
+  # raw data (SuperSeries-aware; used for provenance/sanity checks)
+  raw_timecourse: data/raw/scrna/timecourse_gse154989
+  raw_tenx_unsorted: data/raw/scrna/tenx_unsorted_gse154977
+  raw_tigit: data/raw/scrna/tigit_gse154978
+  raw_scatac: data/raw/scatac/gse154965
+  raw_scdna: data/raw/scdna/gse154970
+
+  # artifacts and outputs
   anndata: data/interim/mm_timecourse.h5ad
   figures: outputs/figures
   tables:  outputs/tables
+  logs:    outputs/logs
+
 markers:
-  s_file:  configs/markers/S_mouse.txt
+  s_file:   configs/markers/S_mouse.txt
   g2m_file: configs/markers/G2M_mouse.txt
-model:
+  # add later if you decide to use them:
+  # hpcs_file: configs/markers/HPCS_mouse.txt
+
+cells:
+  phase_bins: 60           # number of bins for phase histograms / rose plots
+  weight_exponent_gamma: 1.0  # p_i^gamma used as weights for KDE/fits
+
+kde:
+  theta_bandwidth: auto    # circular KDE concentration (kappa): "auto" = CV
+  radial_bandwidth: auto   # Gaussian bandwidth for r; "auto" = rule-of-thumb
+
+mixture:
+  em_tol: 1.0e-6
+  em_max_iter: 500
+  call_threshold: 0.5      # p_i >= threshold => "cycling"
+
+fourier:
+  harmonics_K: 1           # 1 or 2; BIC can upgrade to 2 if strong
+  ridge_lambda: 0.0        # 0 = ordinary LS; you can switch to CV later
+
+w1:
+  bins: 60                 # bins for circular Wasserstein-1 distance
+
+ot:                         # placeholder for later notebooks (not used yet)
   bins: 60
-  ridge_lambda: 0.0
-  harmonics_K: 1
-  seed: 42
+  epsilon_scale: 0.05
+
+random_seeds:
+  numpy: 42
+  sklearn: 42
+
+plotting:
+  dpi: 150
+  style: default
