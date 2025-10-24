@@ -1,0 +1,7 @@
+{
+  "msigdbr_version": "25.1.1",
+  "msigdb_release": {},
+  "date": "2025-10-24 07:30:30",
+  "species": "Mus musculus",
+  "collections": ["MH (Hallmark)", "M2:CP:REACTOME", "M3:GTRD", "MIRDB"]
+}
