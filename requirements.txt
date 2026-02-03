@@ -7,3 +7,6 @@ h5py
 matplotlib
 scikit-learn
 pyyaml
+POT
+torch
+networkx

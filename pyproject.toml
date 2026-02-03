@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "limitcycle-landscape"
+version = "0.1.0"
+description = "Limit-cycle cell-cycle modeling and multi-omic alignment tooling."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Limit-cycle Landscape Contributors" }
+]
+dependencies = [
+  "anndata",
+  "scanpy",
+  "pandas",
+  "numpy",
+  "scipy",
+  "h5py",
+  "matplotlib",
+  "scikit-learn",
+  "pyyaml",
+  "POT",
+  "torch",
+  "networkx",
+]
+
+[project.scripts]
+limitcycle-landscape = "limitcycle_landscape.cli:main"
+hpcs-model = "hpcs_model.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

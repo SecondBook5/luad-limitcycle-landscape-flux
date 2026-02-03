@@ -1,0 +1,40 @@
+paths:
+  data_root: data
+  output_root: outputs
+  input_h5ad: data/raw/adata_raw.h5ad
+
+preprocess:
+  min_cells: 200
+  min_genes: 200
+  hvg_n: 2000
+  pca_n: 50
+  neighbors_k: 15
+  embedding: umap
+
+clustering:
+  leiden_resolution: 1.0
+  cluster_key: cluster
+
+ot:
+  epsilon: 0.05
+  metric: sqeuclidean
+  seed: 42
+
+graph:
+  edge_threshold: 0.0
+
+landscape_flux:
+  density_k: 30
+  grid_size: 50
+  eps: 1e-8
+
+ml:
+  hidden_dim: 128
+  epochs: 50
+  lr: 1.0e-3
+  batch_size: 256
+  seed: 42
+
+bootstrap:
+  n_iters: 50
+  sample_fraction: 0.8
